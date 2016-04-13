@@ -1,4 +1,4 @@
-/*! dicom-parser - v1.3.0 - 2016-03-13 | (c) 2014 Chris Hafey | https://github.com/chafey/dicomParser */
+/*! dicom-parser - v1.3.0 - 2016-04-13 | (c) 2014 Chris Hafey | https://github.com/chafey/dicomParser */
 (function (root, factory) {
 
     // node.js
@@ -2208,7 +2208,7 @@ var dicomParser = (function (dicomParser)
             dataOffset :  byteStream.position
         };
 
-        if (element.tag !== 'xfffee000')
+        if (element.tag !== 'xfffee000' && element.tag !== 'xfffee0dd')
         {
             throw "dicomParser.readSequenceItem: item tag (FFFE,E000) not found at offset " + startPosition;
         }
